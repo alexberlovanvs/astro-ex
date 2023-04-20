@@ -1,37 +1,27 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+
+import Counter from '../components/Counter';
+import CounterVue from '../components/CounterVue.vue';
+import CounterSvelte from '../components/CounterSvelte.svelte';
 ---
 
 <Layout title="Welcome to Astro.">
 	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
+		<CounterSvelte title="svelte idle" client:idle/>
 		<ul role="list" class="link-card-grid">
 			<Card
 				href="https://docs.astro.build/"
 				title="Documentation"
 				body="Learn how Astro works and explore the official API docs."
 			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
 		</ul>
+		<Counter title="react load" client:load/>
+		<Counter title="react media" client:media="(min-width: 1400px)"/>
+		<div class="big-height"></div>
+		<CounterVue title="vue visible" client:visible/>
+		
 	</main>
 </Layout>
 
@@ -77,5 +67,10 @@ import Card from '../components/Card.astro';
 		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
 		gap: 1rem;
 		padding: 0;
+	}
+	.big-height {
+		height: 1000px;
+		width: 500px;
+		border: 1px solid pink;
 	}
 </style>
