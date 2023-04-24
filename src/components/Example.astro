@@ -1,0 +1,10 @@
+---
+//Import a React components
+import Counter from "./Counter.jsx";
+---
+
+<!--This component is interactive, astro loads JS for it -->
+<Counter title="I am interactive" client:load/>
+
+<!-- This component is static, no JS is loaded for it -->
+<Counter title="I am static" />

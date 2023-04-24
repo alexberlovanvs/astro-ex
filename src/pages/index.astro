@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 
 import Counter from '../components/Counter';
+import CounterMedia from '../components/CounterMedia';
 import CounterVue from '../components/CounterVue.vue';
 import CounterSvelte from '../components/CounterSvelte.svelte';
 ---
@@ -18,7 +19,7 @@ import CounterSvelte from '../components/CounterSvelte.svelte';
 			/>
 		</ul>
 		<Counter title="react load" client:load/>
-		<Counter title="react media" client:media="(min-width: 1400px)"/>
+		<CounterMedia title="react media" client:media="(min-width: 1400px)"/>
 		<div class="big-height"></div>
 		<CounterVue title="vue visible" client:visible/>
 		
